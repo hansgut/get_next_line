@@ -15,9 +15,13 @@ jobs:
     - uses: actions/checkout@v4
     - name: Download tests repo war machine
       run: git clone https://github.com/Tripouille/gnlTester
-    - name: run tests
+    - name: Install valgrind
       run: sudo apt-get install -y valgrind
-    - name: Install depends
+    - name: Install norm
+      run: python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
+    - name: Run norm
+      run: norminette
+    - name: run tests
       run: |
         export TERM=xterm
         cd gnlTester
