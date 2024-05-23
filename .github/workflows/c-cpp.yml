@@ -17,5 +17,6 @@ jobs:
       run: git clone https://github.com/Tripouille/gnlTester
     - name: run tests
       run: |
+        export TERM=xterm
         cd gnlTester
         make m
