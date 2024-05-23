@@ -16,6 +16,8 @@ jobs:
     - name: Download tests repo war machine
       run: git clone https://github.com/Tripouille/gnlTester
     - name: run tests
+      run: sudo apt-get install -y valgrind
+    - name: Install depends
       run: |
         export TERM=xterm
         cd gnlTester
